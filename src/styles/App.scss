@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background-color: #0b0b14;
+}
+
+.hero {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    .mask {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            to left,
+            #0b0b14,
+            #0b0b14,
+            transparent
+        );
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin-top: -30px;
+            margin-right: 20px;
+        }
+    }
+    .heroImg {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .search {
+        position: absolute;
+        left: 75%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        .search-term {
+            width: 100%;
+            border: 2px solid #00b4cc;
+            box-shadow: 0px 6px 20px 0px #00b4cc7a, 0 -6px 20px #00b4cc7a;
+            padding: 5px;
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+            color: #0b0b14;
+        }
+    }
+    .htitle {
+        position: absolute;
+        left: 75%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        color: whitesmoke;
+        width: 40%;
+        font-size: 4.5rem;
+        font-weight: bold;
+        text-align: center;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: whitesmoke 1px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 30px;
+    position: relative;
+    background-color: #0b0b14;
+    color: whitesmoke;
+    box-shadow: -20px -20px 20px 0px #0b0b14;
+    .no-match {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+    }
+    .movies {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        .trend {
+            position: absolute;
+            top: 35px;
+            left: 70px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .movie {
+            width: 290px;
+            margin: 30px;
+            display: flex;
+            justify-content: center;
+            .movie-card {
+                position: relative;
+                width: 90%;
+                height: 380px;
+                border: 3px solid #0b0b14;
+                padding: 2rem 0.5rem;
+                min-height: 3em;
+                resize: both;
+                // background: #ffd73e33;
+                border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E")
+                    1;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+                transition: 0.4s;
+                .moimg {
+                    width: 80%;
+                }
+                .title {
+                    width: 100%;
+                    text-align: center;
+                }
+                .rate {
+                    position: absolute;
+                    top: 5%;
+                    left: 5%;
+                    text-align: center;
+                    width: 3.2rem;
+                    font-weight: bold;
+                    z-index: 1;
+                    color: #0b0b14;
+                }
+                .star {
+                    position: absolute;
+                    top: 2%;
+                    left: 5%;
+                    width: 3.2rem;
+                }
+                &:hover {
+                    transform: scale(1.06);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.popup-content {
+    margin: auto;
+    width: 780px;
+    height: 439px;
+    border: none;
+    padding: 0;
+    z-index: -2;
+    .popup-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .popup-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .popup-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0b14;
+            box-shadow: inset -2px 0px 40px 40px #0b0b14;
+            opacity: 0.85;
+            z-index: -1;
+        }
+        .popup-card-inf {
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            .poPopImg {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 107%;
+                transform: translateY(-50%);
+            }
+            .pop-upper-inf {
+                width: 50%;
+                height: 30%;
+                .pop-title {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                }
+                .pop-date-rate {
+                    color: rgba(255, 255, 255, 0.75);
+                    div {
+                        margin: 7px;
+                    }
+                }
+            }
+            .pop-overview {
+                width: 50%;
+                height: 50%;
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 350px) {
+    .container {
+        .movies {
+            .movie {
+                .movie-card {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    .popup-content {
+        width: 312px;
+        .popup-card {
+            .popup-card-img {
+                width: auto;
+                height: 100%;
+            }
+            .popup-card-inf {
+                .poPopImg {
+                    display: none;
+                }
+                .pop-upper-inf {
+                    width: 100%;
+                }
+                .pop-overview {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 759px) {
+    .hero {
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .mask {
+            justify-content: center;
+            .logo {
+                position: absolute;
+                top: -20%;
+                width: 150px;
+                height: 150px;
+            }
+        }
+        .heroImg {
+            align-self: flex-start;
+        }
+        .search {
+            left: 50%;
+            top: 70%;
+            width: 80%;
+            transform: translate(-50%, -50%);
+        }
+        .htitle {
+            width: 100%;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+        }
+    }
+    .popup-content {
+        width: 90%;
+        .popup-card {
+            .popup-card-img {
+                width: auto;
+                height: 100%;
+            }
+            .popup-card-inf {
+                .poPopImg {
+                    display: none;
+                }
+                .pop-upper-inf {
+                    width: 100%;
+                }
+                .pop-overview {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 760px) and (max-width: 1109px) {
+    .hero {
+        .mask {
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        .search {
+            top: 85%;
+            left: 65%;
+        }
+        .htitle {
+            font-size: 3.5rem;
+            top: 45%;
+            left: 65%;
+        }
+    }
+}
